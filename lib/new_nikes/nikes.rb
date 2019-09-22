@@ -3,7 +3,7 @@ class NewNikes::Nikes
   
   @@all = []
   
-  def initialize(name=nil, price=nil)
+  def initialize(name, price)
     @name = name
     @price = price 
    

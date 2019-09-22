@@ -1,4 +1,5 @@
 class NewNikes::CLI 
+ 
   def run 
     puts "Welcome to Nike Shoe store!"
     puts ""
@@ -12,10 +13,10 @@ class NewNikes::CLI
       puts "#{index + 1}. #{nike.name}"
     end 
     
-    puts "Please select a shoe by number to view it's information"
+    puts "Please select a shoe by number to view it's information."
     
     input = gets.chomp 
-    if input.to_i > NewNikes::Nikes.all.size || input.to_i <= 0 
+    if input.to_i > NewNikes::Nikes.all.size 
       puts "That is an invalid number"
       menu 
     end 
@@ -23,7 +24,7 @@ class NewNikes::CLI
     nike = NewNikes::Nikes.all[input.to_i - 1]
     puts "Here is the information for #{nike.name}:"
     puts nike.information
-    
+
     menu 
     
   end 
