@@ -9,3 +9,4 @@ class NewNikes::Nikes
   def self.all
     @@all
   end
+end 
