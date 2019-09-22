@@ -1,4 +1,4 @@
-class CLI 
+class NewNikes::CLI 
   def run 
     puts "Welcome to Nike Shoe store!"
     puts ""
