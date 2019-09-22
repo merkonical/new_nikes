@@ -15,10 +15,14 @@ class CLI
     puts "Please select a shoe by number to view it's information"
     
     input = gets.chomp 
-    if input.to_i > Nikes.all.size 
+    if input.to_i > Nikes.all.size || input.to_i <= 0 
       puts "That is an invalid number"
       menu 
     end 
+    nike = Nikes.all[input.to_i - 1]
+    puts "Here is the information for #{nike.name}:"
+    puts nike.information
     
+    menu 
   end 
 end 
