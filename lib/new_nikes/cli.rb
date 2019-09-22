@@ -19,10 +19,12 @@ class NewNikes::CLI
       puts "That is an invalid number"
       menu 
     end 
+    
     nike = NewNikes::Nikes.all[input.to_i - 1]
     puts "Here is the information for #{nike.name}:"
     puts nike.information
     
     menu 
+    
   end 
 end 
