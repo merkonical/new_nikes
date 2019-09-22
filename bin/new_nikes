@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "new_nikes"
+require_relative '../lib/new_nikes'
+
+NewNikes::CLI.new.call
