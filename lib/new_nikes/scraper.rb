@@ -24,5 +24,5 @@ class NewNikes::Scraper
       @@all << shoe
     end
   end 
-  binding.pry 
+  
 end 
