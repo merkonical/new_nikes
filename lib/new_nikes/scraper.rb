@@ -12,27 +12,17 @@ class NewNikes::Scraper
     @@all 
   end 
   
-  def self.scrape_nike
+  def self.doc
     @doc = Nokogiri::HTML(open("https://www.nike.com/w/new-mens-shoes-3n82yznik1zy7ok?sort=newest", 'User-Agent' => 'firefox'))
-
-    shoe = self.new
-    shoe.name = doc.css("div.product-card__title").text.strip
-    shoe.price = doc.css("div.product-card__price").text.strip
-    
-    shoe
-  end
-  
-  def self.today
-    self.scrape_shoes
   end
 
   def self.scrape_shoes
-    shoes = []
-
-    shoes << self.scrape_nike
-    
-    shoes
-  end
-
-  
+    @doc.each do |n| 
+      name = n.css("div.product-card__title").text.strip
+      price = n.css("div.product-card__price").text.strip
+      shoe = self.new(name, price)
+      @@all << shoe
+    end
+  end 
+  binding.pry 
 end 
