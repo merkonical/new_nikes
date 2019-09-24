@@ -1,5 +1,17 @@
 class NewNikes::CLI 
  
+ def list_product
+    NewNikes::Scraper.scrape 
+    NewNikes::Scraper.scrape_shoe
+    NewNikes::Scraper.display_shoe
+  end
+  
+  def list_series(input)
+    NewNikes::Scraper.scrape
+    NewNikes::Scraper.scrape_shoe
+    NewNikes::Scraper.display_price(input)
+  end
+  
   def call
     welcome
     puts"   "
@@ -15,7 +27,7 @@ class NewNikes::CLI
       puts "   "
       input = gets.strip.downcase
       case input
-      when "show list of shoes"
+      when "show list"
         puts "-------------------------"
         puts "   "
         list_shoes
@@ -28,7 +40,7 @@ class NewNikes::CLI
           list_price(input)
         options
         puts "-------------------------"
-        end
+      
       end 
     end 
   end
