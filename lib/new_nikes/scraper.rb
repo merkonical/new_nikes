@@ -18,10 +18,10 @@ class NewNikes::Scraper
   end
   
   def self.scrape_shoe
-    @doc.each do |n|
-      name = n.css("div.product-card__title").text.strip
-      price = n.css("div.product-card__price").text.strip
-      shoe = self.new(name, price)
+    @doc.each do |nike|
+      name = nike.css("div.product-card__title").text.strip
+      price = nike.css("div.product-card__price").text.strip
+      shoe = self.new(@name, price)
       @@all << shoe 
     end 
   end 

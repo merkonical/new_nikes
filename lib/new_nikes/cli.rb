@@ -20,10 +20,10 @@ class NewNikes::CLI
   end
   
   def welcome
-    puts "Please select an option: name or price"
+    puts "This is the new Nike shoes for men section"
   def options
     input = "nil"
-    puts "Please enter your input below this line"
+    puts "Please enter your input below this line with name or price"
     puts "-----------------------------------------"
       puts "   "
       input = gets.strip.downcase
