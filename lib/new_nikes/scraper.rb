@@ -21,7 +21,7 @@ class NewNikes::Scraper
     @doc.each do |nike|
       name = nike.css("div.product-card__title").text.strip
       price = nike.css("div.product-card__price").text.strip
-      shoe = self.new(@name, price)
+      shoe = self.new(name, price)
       @@all << shoe 
     end 
   end 
