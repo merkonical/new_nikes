@@ -1,7 +1,7 @@
 class NewNikes::Shoe
   attr_accessor :name, :price 
 
-  @@all = []
+  @all = []
   
   def initialize(name=nil, price=nil)
     @name = name 
@@ -9,6 +9,6 @@ class NewNikes::Shoe
   end 
   
   def self.all 
-    @@all 
+    @all 
   end
 end 

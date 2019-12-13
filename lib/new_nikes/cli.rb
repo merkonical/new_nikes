@@ -6,7 +6,7 @@ class NewNikes::CLI
   NewNikes::Scraper.display_shoe
  end
   
- def list_price(input)
+ def list_price
   NewNikes::Scraper.scrape
   NewNikes::Scraper.scrape_shoe
   NewNikes::Scraper.display_price(input)
@@ -14,9 +14,9 @@ class NewNikes::CLI
   
  def call
   welcome
+  list_price
   puts"   "
   options 
-    
  end
   
  def welcome
