@@ -10,7 +10,7 @@ class NewNikes::Scraper
   
   def self.all 
     @@all 
-  end 
+  end  
   
   def self.scrape
     @doc = Nokogiri::HTML(open("https://www.nike.com/w/new-mens-shoes-3n82yznik1zy7ok?sort=newest", 'User-Agent' => 'firefox'))

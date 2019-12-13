@@ -4,7 +4,7 @@ class NewNikes::CLI
     NewNikes::Scraper.scrape 
     NewNikes::Scraper.scrape_shoe
     NewNikes::Scraper.display_shoe
-  end
+ end
   
   def list_price(input)
     NewNikes::Scraper.scrape
@@ -21,6 +21,7 @@ class NewNikes::CLI
   
   def welcome
     puts "This is the new Nike shoes for men section"
+  end 
   def options
     input = "nil"
     puts "Please enter your input below this line with name or price"
@@ -43,6 +44,6 @@ class NewNikes::CLI
         puts "-------------------------"
       
       end 
-    end 
-  end
+    end
+  end 
 end 
