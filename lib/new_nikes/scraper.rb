@@ -1,3 +1,5 @@
+require 'pry'
+
 class NewNikes::Scraper 
 
   def self.scrape
@@ -11,6 +13,7 @@ class NewNikes::Scraper
       price = nike.css("div.product-card__price").text.strip
       shoe = self.new(name, price)
       @@all << shoe 
+      binding.pry
     end 
   end 
   

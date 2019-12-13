@@ -1,12 +1,14 @@
-attr_accessor :name, :price 
+Class NewNikes::Shoe
+   attr_accessor :name, :price 
+
+   @@all = []
   
-@@all = []
-
-def initialize(name=nil, price=nil)
-  @name = name 
-  @price = price
+  def initialize(name=nil, price=nil)
+    @name = name 
+    @price = price
+  end 
+  
+  def self.all 
+    @@all 
+  end
 end 
-
-def self.all 
-  @@all 
-end  
