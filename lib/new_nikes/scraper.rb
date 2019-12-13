@@ -1,17 +1,5 @@
 class NewNikes::Scraper 
-  attr_accessor :name, :price 
-  
-  @@all = []
-  
-  def initialize(name=nil, price=nil)
-    @name = name 
-    @price = price
-  end 
-  
-  def self.all 
-    @@all 
-  end  
-  
+
   def self.scrape
     @doc = Nokogiri::HTML(open("https://www.nike.com/w/new-mens-shoes-3n82yznik1zy7ok?sort=newest", 'User-Agent' => 'firefox'))
     
@@ -36,5 +24,4 @@ class NewNikes::Scraper
     index = input.to_i - 1
     puts "#{@@all[index].price}"
   end
-  #binding.pry 
 end 
