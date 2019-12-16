@@ -1,5 +1,5 @@
 class NewNikes::Shoe
-  attr_accessor :name, :price, :url 
+  attr_accessor :name, :price, :url, :description
   
   @@all = []
 
@@ -11,8 +11,7 @@ class NewNikes::Shoe
     @name = name 
     @price = price
     @url = url
+    
     @@all << self  #self = shoe object that was just created
   end 
-
-  
 end  

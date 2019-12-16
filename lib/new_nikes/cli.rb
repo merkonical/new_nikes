@@ -1,6 +1,8 @@
 class NewNikes::CLI 
  
- def list_shoes
+  
+
+  def list_shoes
    NewNikes::Shoe.all.each.with_index(1) do |shoe, i|
      puts "   #{i}.   #{shoe.name}"
    end
@@ -35,8 +37,8 @@ class NewNikes::CLI
     input = gets.strip.downcase
     if input.to_i > 0 && input.to_i <= NewNikes::Shoe.all.length  #input is a number 1 to last number of shoe displayed
       display_price(input)
-      puts "Enter 'read more' or 'next' to proceed"
-      more_options
+      
+      more_options(input)
       puts "would you like to look at another shoe? y/n"
       input = gets.strip.downcase
       if input == "y"
@@ -55,13 +57,16 @@ class NewNikes::CLI
     end 
  end
  
- def more_options
+ def more_options(input)
+    shoe = NewNikes::Shoe.all[input.to_i - 1]
+    puts "Enter 'read more' or 'next' to proceed"
     input = gets.strip.downcase
-    if input == "read more"  
+    if input == "read more" 
       puts "------------------------------------"
-      puts "here we have a sample description"
+      NewNikes::Scraper.scrape_description(shoe)
+      puts shoe.description
       puts "------------------------------------"
-    end 
+    end
  end
 
     # case input

@@ -4,7 +4,6 @@ class NewNikes::Scraper
  
   def self.scrape
     @doc = Nokogiri::HTML(open("https://www.nike.com/w/new-mens-shoes-3n82yznik1zy7ok?sort=newest", 'User-Agent' => 'firefox'))
-    
   end
   
   def self.scrape_shoe
@@ -16,5 +15,10 @@ class NewNikes::Scraper
     end
   end 
   
-
+  def self.scrape_description(shoe)
+    
+    @doc = Nokogiri::HTML(open(shoe.url, 'User-Agent' => 'firefox'))
+    shoe.description = @doc.css("div.description-preview.body-baseline-base.css-1pbvugb").text
+  end 
+   #@doc.css("div.description-preview.body-baseline-base.css-1pbvugb")
 end 
